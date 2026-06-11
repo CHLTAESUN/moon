@@ -7,6 +7,9 @@ import { SITE } from '../config.js';
 const { title, description } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE.name}` : SITE.name;
 const pageDesc = description || SITE.description;
+// 링크 미리보기 대표 이미지(절대 URL)
+const ogImage = new URL('/images/moon-photo.jpg', Astro.site).href;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!doctype html>
 <html lang="ko">
@@ -18,6 +21,12 @@ const pageDesc = description || SITE.description;
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDesc} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="472" />
+    <meta property="og:image:height" content="317" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/images/placeholder.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
