@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 4321
+    },
+    {
+      "name": "sayo-preview",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\SBS\\Documents\\Codex\\2026-06-11\\new-chat\\work\\onmaeul && npx vite preview --port 4173 --base /sayo/"],
+      "port": 4173
     }
   ]
 }
