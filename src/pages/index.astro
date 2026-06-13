@@ -7,8 +7,9 @@ import products from '../data/products.json';
 const featured = products.filter((p) => p.featured);
 ---
 <Base>
-  <section class="hero" style={`--moon-bg: url('${link('/images/moon-photo.jpg')}')`}>
+  <section class="hero">
     <div class="container">
+      <img class="hero-moon" src={link('/images/moon-photo.jpg')} alt="보름달" />
       <h1>{SITE.tagline}</h1>
       <p>{SITE.description}</p>
       <div class="hero-actions">

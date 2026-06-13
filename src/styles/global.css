@@ -111,10 +111,7 @@ a { color: inherit; text-decoration: none; }
 /* ===== 히어로 ===== */
 .hero {
   position: relative;
-  min-height: 46vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  padding: 3.25rem 0 3.5rem;
   text-align: center;
   overflow: hidden;
   /* 보라빛 밤하늘 */
@@ -122,21 +119,16 @@ a { color: inherit; text-decoration: none; }
     radial-gradient(ellipse at 50% 6%, rgba(150,120,200,0.18), rgba(150,120,200,0) 50%),
     linear-gradient(180deg, #1d1834 0%, var(--bg) 75%);
 }
-/* 달 사진 — 원본 크기 가깝게(선명) + 가장자리 보라로 페이드 */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(420px, 92%);
-  height: 290px;
-  background: var(--moon-bg) center center / cover no-repeat;
-  -webkit-mask: radial-gradient(ellipse 62% 64% at 50% 44%, #000 52%, transparent 80%);
-          mask: radial-gradient(ellipse 62% 64% at 50% 44%, #000 52%, transparent 80%);
-  pointer-events: none;
+/* 달 — 온전한 원형, 가운데 정렬 */
+.hero-moon {
+  display: block;
+  width: min(220px, 56vw);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.75rem;
+  box-shadow: 0 0 55px 8px rgba(225,215,185,0.20);
 }
-.hero .container { padding-bottom: 3.5rem; }
 .hero h1 { color: #f3eee2; position: relative; z-index: 3; text-shadow: 0 2px 22px rgba(10,8,16,0.85); }
 .hero p { color: #d7d0e0; position: relative; z-index: 3; text-shadow: 0 1px 12px rgba(10,8,16,0.8); }
 .hero-actions { position: relative; z-index: 3; }
@@ -228,6 +220,6 @@ a { color: inherit; text-decoration: none; }
   .nav { gap: 0.15rem; font-size: 0.85rem; }
   .nav a { padding: 0.35rem 0.5rem; }
   .product-detail { grid-template-columns: 1fr; }
-  .hero { min-height: 42vh; }
+  .hero { padding: 2.5rem 0 3rem; }
   .hero p { font-size: 1.02rem; }
 }
