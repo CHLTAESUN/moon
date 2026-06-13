@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
-// 메인 사이트 username.github.io 용. base = '/'.
-// 커스텀 도메인 쓸 때 site 값만 바꾸면 됨.
+// 프로젝트 페이지 chltaesun.github.io/moon/ 용. base = '/moon'.
+// 커스텀 도메인 쓰면 site 값 바꾸고 base 를 '/' 로 되돌리면 됨.
 export default defineConfig({
   site: 'https://chltaesun.github.io',
-  base: '/',
+  base: '/moon',
 });

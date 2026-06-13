@@ -1,9 +1,10 @@
 ---
+import { link } from '../config.js';
 const { product } = Astro.props;
 ---
-<a href={`/products/${product.slug}/`} class="card">
+<a href={link(`/products/${product.slug}/`)} class="card">
   <div class="card-img">
-    <img src={product.image} alt={product.name} loading="lazy" />
+    <img src={link(product.image)} alt={product.name} loading="lazy" />
   </div>
   <div class="card-body">
     <div class="card-cat">{product.category}</div>

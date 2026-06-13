@@ -1,14 +1,18 @@
 ---
-import { SITE, NAV } from '../config.js';
+import { SITE, NAV, link } from '../config.js';
 const path = Astro.url.pathname;
-const isActive = (href) => href === '/' ? path === '/' : path.startsWith(href);
+const home = link('/');
+const isActive = (href) => {
+  const full = link(href);
+  return full === home ? path === home : path.startsWith(full);
+};
 ---
 <header class="site-header">
   <div class="container">
-    <a href="/" class="logo">{SITE.name}</a>
+    <a href={home} class="logo">{SITE.name}</a>
     <nav class="nav">
       {NAV.map((item) => (
-        <a href={item.href} class={isActive(item.href) ? 'active' : ''}>{item.label}</a>
+        <a href={link(item.href)} class={isActive(item.href) ? 'active' : ''}>{item.label}</a>
       ))}
     </nav>
   </div>

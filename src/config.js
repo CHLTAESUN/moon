@@ -1,3 +1,8 @@
+// 내부 링크에 base(/moon/) 를 자동으로 붙여주는 헬퍼.
+// astro.config 의 base 가 바뀌어도 모든 링크가 따라간다.
+const BASE = import.meta.env.BASE_URL; // 예: '/moon/'
+export const link = (path = '/') => (BASE + path).replace(/\/{2,}/g, '/');
+
 // 사이트 전역 설정. 여기 값만 바꾸면 전체 반영됨.
 export const SITE = {
   name: '담월',

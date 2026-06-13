@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE } from '../config.js';
+import { SITE, link } from '../config.js';
 ---
 <Base title="소개" description={`${SITE.name} 브랜드 소개`}>
   <section class="section">
@@ -12,7 +12,7 @@ import { SITE } from '../config.js';
       <p>가치·철학·차별점을 적으세요. 지금은 placeholder 문구입니다.</p>
 
       <h2>주문 안내</h2>
-      <p>담월의 술은 전화·카카오톡으로 주문하실 수 있습니다. 자세한 안내는 <a href="/contact/">주문·문의</a> 페이지를 참고하세요.</p>
+      <p>담월의 술은 전화·카카오톡으로 주문하실 수 있습니다. 자세한 안내는 <a href={link('/contact/')}>주문·문의</a> 페이지를 참고하세요.</p>
     </div>
   </section>
 </Base>

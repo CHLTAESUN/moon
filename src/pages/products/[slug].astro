@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import OrderButtons from '../../components/OrderButtons.astro';
 import products from '../../data/products.json';
+import { link } from '../../config.js';
 
 // 상품 데이터마다 페이지 1장 자동 생성.
 export function getStaticPaths() {
@@ -17,7 +18,7 @@ const { product } = Astro.props;
   <section class="container">
     <div class="product-detail">
       <div class="detail-img">
-        <img src={product.image} alt={product.name} />
+        <img src={link(product.image)} alt={product.name} />
       </div>
       <div>
         <div class="card-cat">{product.category}</div>
@@ -30,6 +31,6 @@ const { product } = Astro.props;
         </p>
       </div>
     </div>
-    <p style="padding-bottom:3rem"><a href="/products/" class="btn btn-outline">← 목록으로</a></p>
+    <p style="padding-bottom:3rem"><a href={link('/products/')} class="btn btn-outline">← 목록으로</a></p>
   </section>
 </Base>
